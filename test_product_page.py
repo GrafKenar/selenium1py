@@ -1,6 +1,7 @@
 from .pages.product_page import *
 import pytest
 
+
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -19,4 +20,3 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.solve_the_puzzle()
     page.check_name_in_message()
     page.check_price_in_message()
-
