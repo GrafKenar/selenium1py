@@ -19,3 +19,11 @@ class ProductPage(BasePage):
         expected_price = self.browser.find_element(*ProductPageLocators.PRICE_ON_PAGE).text
         actual_price = self.browser.find_element(*ProductPageLocators.PRICE_IN_MESSAGE).text
         assert expected_price in actual_price, "names are different on page and in the message"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.BASCET_SUCCESS), \
+            "Success message is presented, but should not be"
+
+    def success_message_should_disappear(self):
+        assert self.is_disappeared(*ProductPageLocators.BASCET_SUCCESS), \
+            "Success message is presented, but should not be"
