@@ -47,6 +47,14 @@ class BasePage:
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
+    def basket_should_be_empty(self):
+        BASKET_BUTTON = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
+        BASKET_BUTTON.click()
+        assert self.is_element_present(*BasePageLocators.BASKET_TEXT), 'there is no text about empty basket'
+
+
+
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
