@@ -47,10 +47,9 @@ class BasePage:
     def should_be_login_link(self):
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
 
-    def basket_should_be_empty(self):
+    def go_to_bascet(self):
         BASKET_BUTTON = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
         BASKET_BUTTON.click()
-        assert self.is_element_present(*BasePageLocators.BASKET_TEXT), 'there is no text about empty basket'
 
 
 
@@ -68,3 +67,7 @@ class BasePage:
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

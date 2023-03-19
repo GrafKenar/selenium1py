@@ -1,5 +1,7 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
+import time
+
 
 
 class LoginPage(BasePage):
@@ -16,3 +18,8 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "there is no register form on the page"
+
+    def register_new_user(self, email, password):
+        self.browser.find_element(*LoginPageLocators.EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.PASSWORD_FIRST).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.PASSWORD_SECOND).send_keys(password)
