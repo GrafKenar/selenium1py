@@ -7,6 +7,7 @@ class LoginPageLocators:
     EMAIL = (By.ID, "id_registration-email")
     PASSWORD_FIRST = (By.ID, 'id_registration-password1')
     PASSWORD_SECOND = (By.ID, 'id_registration-password2')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, '[name="registration_submit"]')
 
 
 class ProductPageLocators:
