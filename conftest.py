@@ -20,7 +20,7 @@ def browser(request):
         options_firefox = FirefoxOptions()
         options_firefox.set_preference("intl.accept_languages", language)
         browser = webdriver.Firefox(options=options_firefox)
-    else:              # chrome either is determined by user or set by default
+    else:
         print("\nstart chrome browser for test")
         options_chrome = Options()
         options_chrome.add_experimental_option('prefs', {'intl.accept_languages': language})

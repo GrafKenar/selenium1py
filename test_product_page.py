@@ -1,6 +1,6 @@
 import pytest
 from pages.product_page import ProductPage
-from pages.basket_page import BascetPage
+from pages.basket_page import BasketPage
 from pages.login_page import LoginPage
 import time
 
@@ -62,7 +62,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, link)
     page.open()
     page.go_to_bascet()
-    page = BascetPage(browser, link)
+    page = BasketPage(browser, link)
     page.basket_should_be_empty()
 
 
@@ -91,7 +91,6 @@ class TestUserAddToBasketFromProductPage:
         page = ProductPage(browser, link)
         page.open()
         page.add_product_to_basket()
-        #    page.solve_the_puzzle()
         page.check_name_in_message()
         page.check_price_in_message()
 
